@@ -1,0 +1,166 @@
+/* Global reset and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling with grid layout for desktop screens */
+body {
+  height: 100%;
+  background-color: hsl(210, 46%, 95%);
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Adjust columns for content layout */
+  padding: 6.75rem 8.15rem; /* Adds spacing around the grid */
+  column-gap: 1.5rem;
+  font-family: "Barlow Semi Condensed"; /* Apply primary font */
+}
+
+/* Main content grid structure */
+main {
+  display: grid;
+  row-gap: 1.5rem; /* Adds spacing between sections */
+}
+
+/* Flexbox layout for testimonials in desktop view */
+.first-flex,
+.second-flex {
+  display: flex;
+  column-gap: 1.5rem; /* Space between testimonials */
+}
+
+/* Testimonial section background colors and positioning */
+.test1 {
+  background-color: hsl(263, 55%, 52%);
+  position: relative; /* Enables positioning of SVG */
+}
+.test2 {
+  background-color: hsl(217, 19%, 35%);
+}
+.test3,
+.test5 {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(217, 19%, 35%); /* Dark text for light background */
+}
+.test4 {
+  background-color: hsl(219, 29%, 14%);
+}
+.test1,
+.test2,
+.test4 {
+  color: hsl(0, 0%, 100%); /* White text for dark background */
+}
+
+/* Common styling for testimonial cards */
+.test1,
+.test2,
+.test3,
+.test4,
+.test5 {
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 1.125rem 1.5rem; /* Inner spacing */
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem; /* Space between inner elements */
+}
+
+/* SVG positioning for decorative icons */
+svg {
+  position: absolute;
+  right: 3em;
+  top: 0;
+  z-index: 0; /* Ensures it stays behind content */
+}
+
+/* Styling for personal pictures */
+.personal-picture1,
+.personal-picture {
+  width: 1.6875rem; /* Fixed size for uniformity */
+  border-radius: 0.84375rem; /* Circular profile pictures */
+}
+
+/* Testimonial header with picture and name */
+.testimonial-info {
+  display: flex;
+  align-items: center;
+  column-gap: 0.6875rem; /* Space between image and text */
+}
+
+/* Name and status styling */
+.personal-name {
+  font-weight: 600; /* Bold text for name */
+  font-size: 0.5625rem;
+  z-index: 100; /* Ensures it remains on top */
+}
+.verification-text {
+  font-size: 0.5rem;
+  opacity: 0.5; /* Dimmed text for secondary info */
+}
+
+/* Main testimonial text styling */
+.main-text {
+  font-weight: 500; /* Semi-bold for emphasis */
+  font-size: 0.8125rem;
+  z-index: 100;
+}
+
+/* Sub-text styling with reduced opacity */
+.sub-text1,
+.sub-text {
+  font-size: 0.5rem;
+  font-weight: 500;
+  line-height: 1.5; /* Improved readability */
+  opacity: 0.7;
+  z-index: 100;
+}
+.sub-text {
+  color: hsl(0, 0%, 81%);
+}
+
+/* Highlighted border for specific pictures */
+.personal-picture1 {
+  border: 1px solid hsl(263, 80%, 69%);
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 800px) {
+  /* Center content for small screens */
+  html {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  body {
+    grid-template-columns: 1fr; /* Single-column layout */
+    row-gap: 1.5rem;
+    width: 23.125rem; /* Adjust content width */
+    align-items: center;
+    padding: 3rem 2rem;
+  }
+  /* Adjust testimonial card width */
+  .test1,
+  .test2,
+  .test3,
+  .test4,
+  .test5 {
+    width: 19.125rem;
+  }
+  /* Reposition SVG for smaller screens */
+  svg {
+    right: 1rem;
+  }
+  /* Adjust font sizes for better readability */
+  .main-text {
+    font-size: 1rem;
+  }
+  .sub-text1,
+  .sub-text {
+    font-size: 0.7rem;
+  }
+  /* Stack testimonials vertically */
+  .first-flex,
+  .second-flex {
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+}
